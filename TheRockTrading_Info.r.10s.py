@@ -13,23 +13,18 @@ apisecret = 'CHANGE_ME'
 fundId = 'ETHEUR'
 defaultKey = 'last'
 printOrder = ['last', 'high', 'low', 'bid', 'ask', 'open', 'close', 'volume', 'volume_traded', 'fund_id', 'date']
-
 tickerUrl = 'https://api.therocktrading.com/v1/funds/tickers'
-nonce = str(int(round(time.time() * 1000)))
-
-def get_signature():
-    return hmac.new(nonce + tickerUrl, apisecret, hashlib.sha512).hexdigest()
 
 def get_headers():
+    nonce = str(int(round(time.time() * 1000)))
     return {
         'Content-Type': 'application/json',
         'X-TRT-KEY': apikey,
-        'X-TRT-SIGN': get_signature(),
+        'X-TRT-SIGN': hmac.new(nonce + tickerUrl, apisecret, hashlib.sha512).hexdigest(),
         'X-TRT-NONCE': nonce
     }
 
 if __name__ == '__main__':
-    output = ''
     try:
         response = requests.get(tickerUrl, headers=get_headers(), timeout=5)
     except Exception:
