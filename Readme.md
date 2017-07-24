@@ -8,22 +8,29 @@
 
 ### What?
 
-I'm developing an interest for [cryptocurrencies](https://en.wikipedia.org/wiki/Cryptocurrency), specially for [Ethereum](https://en.wikipedia.org/wiki/Ethereum).
+I'm growing an interest for [cryptocurrencies](https://en.wikipedia.org/wiki/Cryptocurrency), specially for [Ethereum](https://en.wikipedia.org/wiki/Ethereum).
  
 I use linux and GNOME, I've an account on [therocktrading.com](https://www.therocktrading.com/) and I want to keep an eye on Ethereum value.  
 
 ### Installation
 
-Install and enable [Argos](https://github.com/p-e-w/argos) then copy and make it executable **trt_ethereum_info.py**:
+Install and enable [Argos](https://github.com/p-e-w/argos) then clone the repo, install requirements, copy and make it executable **trt_ethereum_info.py**.
+
+**You need an ApiKey** - see *Configuration* section.
+
 ```
+git clone https://github.com/and9000/trt_ethereum_info.git
+cd trt_ethereum_info
+pip install -r requirements.txt
 cp trt_ethereum_info.py ~/.config/argos/trt_ethereum_info.r.10s.py
 chmod +x ~/.config/argos/trt_ethereum_info.r.10s.py
+# Edit key and secret.
 ```
 Funny extension means it will dock on the `r`ight side and it will update every `10s`econds.
 
 ### Configuration
 
-**Mandatory**: create an ApiKey on the site then change both `apikey = 'CHANGEME_KEY'` and `apisecret = 'CHANGEME_SECRET'` with proper value.
+**Mandatory**: create an ApiKey on [therocktrading.com](https://www.therocktrading.com/) then change both `apikey = 'CHANGEME_KEY'` and `apisecret = 'CHANGEME_SECRET'` with proper value.
 
 `trt_ethereum_info` is customizable, you can choose to change:
  * `fundId` to show another exchange
