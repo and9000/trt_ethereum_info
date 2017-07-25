@@ -49,7 +49,7 @@ if __name__ == '__main__':
         print('TIMEOUT')
         exit(1)
     except Exception as e:
-        print(e.message)
+        print('OFFLINE')
         exit(1)
 
     if response.status_code != 200:
