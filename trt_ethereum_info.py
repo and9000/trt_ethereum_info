@@ -19,32 +19,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import requests.exceptions
-import time
-import hmac
-import hashlib
 import json
-
-apikey = 'CHANGEME_KEY'
-apisecret = 'CHANGEME_SECRET'
 
 fundId = 'ETHEUR'
 defaultKey = 'last'
 printOrder = ['last', 'high', 'low', 'bid', 'ask', 'open', 'close', 'volume', 'volume_traded', 'fund_id', 'date']
 tickerUrl = 'https://api.therocktrading.com/v1/funds/tickers'
 
-
-def get_headers():
-    nonce = str(int(round(time.time() * 1000)))
-    return {
-        'Content-Type': 'application/json',
-        'X-TRT-KEY': apikey,
-        'X-TRT-SIGN': hmac.new(nonce + tickerUrl, msg=apisecret, digestmod=hashlib.sha512).hexdigest(),
-        'X-TRT-NONCE': nonce
-    }
-
 if __name__ == '__main__':
     try:
-        response = requests.get(tickerUrl, headers=get_headers(), timeout=10)
+        response = requests.get(tickerUrl, timeout=10)
     except requests.exceptions.Timeout:
         print('TIMEOUT')
         exit(1)
