@@ -19,7 +19,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import requests.exceptions
-import json
 
 fundId = 'ETHEUR'
 defaultKey = 'last'
@@ -40,7 +39,7 @@ if __name__ == '__main__':
         print('ERROR')
         exit(1)
 
-    results = json.loads(response.content)
+    results = response.json()
     for result in results['tickers']:
         if result['fund_id'] == fundId:
             print(defaultKey + ': ' + str(result[defaultKey]))
