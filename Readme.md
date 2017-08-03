@@ -4,7 +4,11 @@
 
 [GNOME Shell extension](https://extensions.gnome.org/) displaying Ethereum to Euro (configurable) cryptocurrency value. It's a simple python script, it works thank to [Argos](https://github.com/p-e-w/argos).  
 
-![schermata da 2017-07-24 23-24-12](https://user-images.githubusercontent.com/6862031/28545449-4a2a4d7c-70c7-11e7-820a-161e04acb62f.png)
+<p align=center>
+    <a href="https://github.com/and9000/trt_ethereum_info">
+        <img src="https://user-images.githubusercontent.com/6862031/28545449-4a2a4d7c-70c7-11e7-820a-161e04acb62f.png" />
+    </a>
+</p>
 
 ### What?
 
