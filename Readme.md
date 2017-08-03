@@ -38,7 +38,7 @@ Funny extension means it will dock on the `r`ight side and it will update every 
 
 ### Note
 
-This is not even an alpha release. Well it works for me (not with python3, I promice I'll fix it). Maybe I will improve it, please be nice. :)
+This is not even an alpha release. Well it works for me, maybe I will improve it, please be nice. :)
 
 ### License
 
